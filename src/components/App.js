@@ -4,10 +4,10 @@ import CommentList from './CommentList';
 
 const App = () => {
 	return (
-		<>
+		<div>
 			<CommentBox />
 			<CommentList />
-		</>
+		</div>
 	);
 };
 
