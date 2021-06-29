@@ -24,4 +24,18 @@ it('has an input field that accepts input', () => {
 	wrapped.find('textarea').simulate('change', {
 		target: { value: 'user input' },
 	});
+	wrapped.update();
+
+	expect(wrapped.find('textarea').prop('value')).toEqual('user input');
+});
+
+it('when form is submitted, text area clears', () => {
+	wrapped.find('textarea').simulate('change', {
+		target: { value: 'user input' },
+	});
+
+	wrapped.update();
+	wrapped.find('form').simulate('submit');
+	wrapped.update();
+	expect(wrapped.find('textarea').prop('value')).toEqual('');
 });
